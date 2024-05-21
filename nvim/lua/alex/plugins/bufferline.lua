@@ -1,5 +1,4 @@
 require("bufferline").setup {
-	-- highlights = require("catppuccin.groups.integrations.bufferline").get(),
 	options = {
 		always_show_bufferline = false,
 		mode = "tabs",
@@ -11,20 +10,8 @@ require("bufferline").setup {
 		indicator = {
 			style = "none"
 		},
-		separator_style = "slant",
+		separator_style = "thick",
 		diagnostics = "nvim_lsp",
-
-		diagnostics_indicator = function(count, level, diagnostics_dict, context)
-			local s = " "
-			for e, n in pairs(diagnostics_dict) do
-				local sym = e == "error" and "󰅚 " or
-					(e == "warning" and "󰀪 ") or
-					(e == "info" and "󰋽 " or "󰌶 ")
-
-				s = s .. sym .. n .. " "
-			end
-			return s
-		end,
 		offsets = {
 			{
 				filetype = "NvimTree",
@@ -59,6 +46,18 @@ require("bufferline").setup {
 			{
 				filetype = "Trouble",
 				text = "Diagnostics",
+				highlight = "Directory",
+				separator = true
+			},
+			{
+				filetype = "dbui",
+				text = "Database",
+				highlight = "Directory",
+				separator = true
+			},
+			{
+				filetype = "fugitive",
+				text = "Git",
 				highlight = "Directory",
 				separator = true
 			},
