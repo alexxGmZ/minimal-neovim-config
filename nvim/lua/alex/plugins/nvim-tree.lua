@@ -2,7 +2,6 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	config = function()
 		vim.opt.termguicolors = true
-		vim.keymap.set("n", "<leader>F", "<cmd>NvimTreeToggle<CR>", { desc = "NvimTree: Toggle" })
 
 		local HEIGHT_RATIO = 0.8 -- You can change this
 		local WIDTH_RATIO = 0.5 -- You can change this too
@@ -19,7 +18,7 @@ return {
 				cursorline = true,
 				signcolumn = "auto",
 				float = {
-					enable = true,
+					enable = false,
 					open_win_config = function()
 						local screen_w = vim.opt.columns:get()
 						local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
