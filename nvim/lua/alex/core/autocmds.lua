@@ -1,21 +1,52 @@
-vim.cmd([[
-	fun! TrimWhitespace()
-		let l:save = winsaveview()
-		keeppatterns %s/\s\+$//e
-		call winrestview(l:save)
-	endfun
+local user_augroup = vim.api.nvim_create_augroup("HANDSOME", {})
 
-	augroup HANDSOME
-		autocmd!
-		autocmd BufWritePre * :call TrimWhitespace()
+-- trim trailing whitespaces
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	group = user_augroup,
+	callback = function()
+		local curr_pos = vim.fn.winsaveview()
+		vim.cmd([[%s/\s\+$//e]])
+		vim.fn.winrestview(curr_pos)
+	end
+})
 
-		" Terminal
-		autocmd TermOpen * setlocal nonumber norelativenumber
+-- hide linenumber in terminal buffertype
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "*",
+	group = user_augroup,
+	callback = function()
+		vim.cmd([[setlocal nonumber norelativenumber]])
+	end
+})
 
-	augroup END
+-- show cmdline
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+	pattern = "*",
+	group = user_augroup,
+	callback = function()
+		vim.opt.cmdheight = 1
+	end
+})
 
-	" augroup cdpwd
-	" 	autocmd!
-	" 	autocmd VimEnter * cd $PWD
-	" augroup END
-]])
+-- hide cmdline
+vim.api.nvim_create_autocmd({ "CmdlineLeave", "UIEnter" }, {
+	pattern = "*",
+	group = user_augroup,
+	callback = function()
+		vim.opt.cmdheight = 0
+	end
+})
+
+-- enforce custom highlights every time the colorscheme changes
+vim.opt.colorcolumn = "90"
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	group = user_augroup,
+	callback = function()
+		vim.cmd [[
+			hi MatchParen gui=underline guifg=Orange guibg=#4e4e4e
+			hi ColorColumn guibg=#3c3c3c
+		]]
+	end
+})
