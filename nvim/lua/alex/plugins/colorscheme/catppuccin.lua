@@ -13,7 +13,7 @@ return {
 			transparent_background = false,
 			term_colors = true,
 			dim_inactive = {
-				enabled = true,
+				enabled = false,
 				shade = "dark",
 				percentage = 0.15,
 			},
