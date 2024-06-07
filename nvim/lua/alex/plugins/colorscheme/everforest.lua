@@ -1,70 +1,60 @@
-return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	-- priority = 1000,
-	event = "CmdlineChanged",
-	config = function()
-		require("catppuccin").setup({
-			flavour = "mocha", -- latte, frappe, macchiato, mocha
-			background = { -- :h background
-				light = "latte",
-				dark = "mocha",
-			},
-			transparent_background = false,
-			term_colors = true,
-			dim_inactive = {
-				enabled = false,
-				shade = "dark",
-				percentage = 0.15,
-			},
-			no_italic = false, -- Force no italic
-			no_bold = false, -- Force no bold
-			styles = {
-				comments = { "italic" },
-				conditionals = { "italic" },
-				loops = { "italic" },
-				functions = {},
-				keywords = { "italic" },
-				strings = { "bold" },
-				variables = { "bold" },
-				numbers = {},
-				booleans = {},
-				properties = {},
-				types = {},
-				operators = { "bold" },
-			},
-			color_overrides = {},
-			custom_highlights = {},
-			integrations = {
-				cmp = true,
-				gitsigns = true,
-				nvimtree = true,
-				telescope = true,
-				notify = false,
-				mini = false,
-				indent_blankline = {
-					enabled = true,
-					colored_indent_levels = false,
-				},
-				navic = {
-					enabled = true,
-				},
-				illuminate = false,
-				mason = true,
-				symbols_outline = true,
-				treesitter_context = true,
-			},
-		})
+local function setup_config()
+	require("everforest").setup({
+		background = "hard",
+		transparent_background_level = 0,
+		italics = true,
+		disable_italic_comments = false,
+		sign_column_background = "none",
+		ui_contrast = "high",
+		dim_inactive_windows = false,
+		diagnostic_text_highlight = false,
+		diagnostic_virtual_text = "coloured",
+		diagnostic_line_highlight = false,
+		spell_foreground = false,
+		show_eob = true,
+		float_style = "dim",
+		on_highlights = function(hl, palette)
+			hl.TSBoolean = { link = "Boolean" }
+			hl.TSFloat = { link = "Float" }
+			hl.TSNumber = { link = "Number" }
+			hl.TSFunction = { link = "Function" }
+			hl.TSFunctionCall = { link = "Function" }
+			hl.TSKeyword = { link = "Keyword" }
+			hl.TSParameter = { fg = palette.red, bold = true }
+			hl.TSString = { fg = palette.green, bold = true }
+			hl.TSConditional = { fg = palette.red, italic = true }
+			hl.TSVariable = { fg = palette.none, bold = true }
+			hl.TSMethod = { link = "Function" }
+			hl.TSMethodCall = { link = "Function" }
+			hl.TreesitterContextBottom = { underline = true }
 
-		-- switch to dark mode when it's 6:00PM
-		-- local current_hour = tonumber(os.date("%H"))
-		-- if (current_hour >= 17 or current_hour < 6) then
-		-- 	vim.cmd.colorscheme "catppuccin-mocha"
-		-- else
-		-- 	vim.cmd.colorscheme "catppuccin-latte"
-		-- end
-		-- vim.cmd.colorscheme "catppuccin-mocha"
-	end,
-	opts = {
-	}
+			hl.CurrentWord = { fg = palette.none, underline = true }
+			hl.String = { fg = palette.green, bold = true }
+			hl.Keyword = { fg = palette.red, italic = true }
+			hl.Constant = { fg = palette.orange, bold = true }
+			hl.Function = { fg = palette.orange, bold = true }
+			hl.Boolean = { fg = palette.purple, bold = true }
+			hl.Float = { fg = palette.purple, bold = true }
+			hl.Number = { fg = palette.purple, bold = true }
+			hl.NormalFloat = { bg = palette.bgdim }
+			hl.FloatBorder = { bg = palette.bgdim }
+			hl.FloatTitle = { bg = palette.bgdim }
+			hl.luaFunc = { link = "Function" }
+			hl.luaFunction = { link = "Function" }
+			hl.vimFuncName = { link = "Function" }
+			hl.vimFunction = { link = "Function" }
+			hl.vimUserFunc = { link = "Function" }
+		end,
+		colours_override = function(palette) end,
+	})
+	vim.cmd.colorscheme "everforest"
+end
+
+return {
+	"neanias/everforest-nvim",
+	-- event = "CmdlineChanged",
+	priority = 1000,
+	config = function()
+		setup_config()
+	end
 }
