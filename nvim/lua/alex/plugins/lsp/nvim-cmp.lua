@@ -7,11 +7,8 @@ if not cmp_setup then
 end
 
 cmp.setup({
-	formatting = {
-	},
-	experimental = {
-		ghost_text = false
-	},
+	formatting = {},
+	experimental = { ghost_text = false },
 
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
@@ -96,8 +93,16 @@ cmp.setup.cmdline({ '/', '?' }, {
 cmp.setup.cmdline(':', {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = 'path' }
-	}, {
-		{ name = 'cmdline' }
-	})
+		{
+			name = 'path',
+			max_item_count = 20
+		},
+		{
+			name = 'cmdline',
+			max_item_count = 20
+		}
+	}),
+	completion = {
+		keyword_length = 2
+	}
 })
