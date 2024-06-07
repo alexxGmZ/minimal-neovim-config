@@ -1,16 +1,18 @@
+local function illuminate_highlights()
+	vim.cmd [[
+		hi IlluminatedWordText guibg=#4e4e4e gui=NONE
+		hi IlluminatedWordRead guibg=#4e4e4e gui=NONE
+		hi IlluminatedWordWrite guibg=#4e4e4e gui=NONE
+	]]
+end
+
 return {
 	"RRethy/vim-illuminate",
 	event = "VeryLazy",
 	config = function()
 		require("illuminate").configure({
-			providers = {
-				'lsp',
-				'treesitter',
-				'regex',
-			},
-			modes_allowlist = {
-				"n",
-			},
+			providers = { 'lsp', 'treesitter', 'regex' },
+			modes_allowlist = { "n" },
 			filetypes_denylist = {
 				"help",
 				"text",
@@ -21,25 +23,13 @@ return {
 			},
 			min_count_to_highlight = 2,
 		})
-		vim.cmd [[
-			hi MatchParen gui=underline guifg=Orange guibg=#4e4e4e
-			hi IlluminatedWordText guibg=#4e4e4e
-			hi IlluminatedWordRead guibg=#4e4e4e
-			hi IlluminatedWordWrite guibg=#4e4e4e
-		]]
 
-		vim.keymap.set("n", "<M-n>",
-			function()
-				require("illuminate").goto_next_reference()
-			end,
-			{ desc = "Illuminate: goto next reference" }
-		)
+		illuminate_highlights()
 
-		vim.keymap.set("n", "<M-p>",
-			function()
-				require("illuminate").goto_prev_reference()
-			end,
-			{ desc = "Illuminate: goto previous reference" }
-		)
+		vim.api.nvim_create_autocmd("ColorScheme", {
+			pattern = "*",
+			group = "HANDSOME",
+			callback = illuminate_highlights,
+		})
 	end
 }
