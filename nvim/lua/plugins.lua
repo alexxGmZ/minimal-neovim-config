@@ -15,8 +15,6 @@ return {
 	require("alex.plugins.colorscheme.github-theme"),
 	-- rose pine
 	require("alex.plugins.colorscheme.rose-pine"),
-	-- newpaper
-	require("alex.plugins.colorscheme.newpaper"),
 	-- kanagawa
 	require("alex.plugins.colorscheme.kanagawa"),
 	-- everforest

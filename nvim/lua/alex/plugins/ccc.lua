@@ -19,5 +19,5 @@ return {
 			}
 		})
 	end,
-	cmd = { "CccHighlighterToggle", "CccHighlighterEnable", "CccPick" },
+	cmd = { "CccHighlighterToggle", "CccHighlighterEnable", "CccPick" }
 }
