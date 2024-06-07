@@ -45,7 +45,7 @@ cp -vr nvim ~/.config/
 
 ### Plugins
 
-I use [```lazy```](https://github.com/folke/lazy.nvim) as a Plugin Manager
+I use [lazy](https://github.com/folke/lazy.nvim) as a Plugin Manager
 
 #### Navigation
 
@@ -79,11 +79,9 @@ I use [```lazy```](https://github.com/folke/lazy.nvim) as a Plugin Manager
 #### Colorscheme
 
 * [catppuccin/nvim            ](https://github.com/catppuccin/nvim)
-* [bluz71/vim-moonfly-colors  ](https://github.com/bluz71/vim-moonfly-colors)
 * [folke/tokyonight.nvim      ](https://github.com/folke/tokyonight.nvim)
 * [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme)
 * [rose-pine/neovim           ](https://github.com/rose-pine/neovim)
-* [yorik1984/newpaper.nvim    ](https://github.com/yorik1984/newpaper.nvim)
 * [rebelot/kanagawa.nvim      ](https://github.com/rebelot/kanagawa.nvim)
 * [neanias/everforest-nvim    ](https://github.com/neanias/everforest-nvim)
 
