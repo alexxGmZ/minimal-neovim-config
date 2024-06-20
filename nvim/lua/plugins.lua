@@ -118,4 +118,6 @@ return {
 		event = "VeryLazy",
 		ft = { 'markdown', 'html', 'php', 'xml', 'javascript' },
 	},
+
+	require("alex.plugins.vim-rest-console"),
 }
