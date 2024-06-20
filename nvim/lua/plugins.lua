@@ -89,7 +89,6 @@ return {
 	require("alex.plugins.comment"),
 	require("alex.plugins.nvim-tmux-navigation"),
 	require("alex.plugins.notify"),
-	require("alex.plugins.nvim-tree"),
 	require("alex.plugins.early-retirement"),
 
 	{
