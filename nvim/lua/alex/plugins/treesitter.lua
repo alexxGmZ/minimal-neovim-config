@@ -10,26 +10,11 @@ return {
 			ignore_install = {},
 			highlight = {
 				enable = false,
-				disable = {},
+				disable = { "lua", "javascript", "go" },
 				additional_vim_regex_highlighting = true,
 			},
 			incremental_selection = { enable = false },
 			indent = { enable = false }
 		}
-
-		-- since I disabled treesitter syntax highlighting by default,
-		-- this autocmd enables it for some specific buffer filetypes only
-		vim.api.nvim_create_autocmd({ "FileType" }, {
-			pattern = {
-				"markdown",
-				"git",
-				"gitcommit",
-				"fugitive",
-				"json",
-				"sql"
-			},
-			group = "HANDSOME",
-			command = "TSBufEnable highlight"
-		})
 	end,
 }
