@@ -120,4 +120,5 @@ return {
 	},
 
 	require("alex.plugins.vim-rest-console"),
+	require("alex.plugins.treesitter"),
 }
