@@ -4,7 +4,17 @@ return {
 	config = function()
 		local treesitter = require('nvim-treesitter.configs')
 		treesitter.setup {
-			ensure_installed = {},
+			ensure_installed = {
+				"bash",
+				"c",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"python",
+				"query",
+				"vim",
+				"vimdoc"
+			},
 			sync_install = false,
 			auto_install = true,
 			ignore_install = {},
