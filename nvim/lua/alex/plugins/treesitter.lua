@@ -4,7 +4,6 @@ return {
 	config = function()
 		local treesitter = require('nvim-treesitter.configs')
 		treesitter.setup {
-			-- parser_install_dir = "/home/alex/.local/share/nvim/lazy/nvim-treesitter",
 			ensure_installed = {},
 			sync_install = false,
 			auto_install = true,
