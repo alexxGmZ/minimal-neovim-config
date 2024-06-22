@@ -19,6 +19,8 @@ return {
 	require("alex.plugins.colorscheme.kanagawa"),
 	-- everforest
 	require("alex.plugins.colorscheme.everforest"),
+	-- gruvbox-material
+	require("alex.plugins.colorscheme.gruvbox-material"),
 
 	--
 	-- Git Integration --

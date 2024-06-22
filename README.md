@@ -84,6 +84,7 @@ I use [lazy](https://github.com/folke/lazy.nvim) as a Plugin Manager
 * [rebelot/kanagawa.nvim          ](https://github.com/rebelot/kanagawa.nvim)
 * [neanias/everforest-nvim        ](https://github.com/neanias/everforest-nvim)
 * [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+* [sainnhe/gruvbox-material       ](https://github.com/sainnhe/gruvbox-material)
 
 #### Git Integration
 
