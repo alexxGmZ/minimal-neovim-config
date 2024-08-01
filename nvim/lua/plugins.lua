@@ -7,16 +7,6 @@ return {
 	--
 	-- COLORSCHEME --
 	--
-	-- catppuccin (main colorscheme)
-	require("alex.plugins.colorscheme.catppuccin"),
-	-- tokyonight
-	require("alex.plugins.colorscheme.tokyonight"),
-	-- github
-	require("alex.plugins.colorscheme.github-theme"),
-	-- rose pine
-	require("alex.plugins.colorscheme.rose-pine"),
-	-- kanagawa
-	require("alex.plugins.colorscheme.kanagawa"),
 	-- everforest
 	require("alex.plugins.colorscheme.everforest"),
 	-- gruvbox-material
@@ -74,8 +64,6 @@ return {
 	},
 
 	require("alex.plugins.vim-illuminate"),
-
-	require("alex.plugins.indent-blankline"),
 
 	{
 		"sitiom/nvim-numbertoggle",
