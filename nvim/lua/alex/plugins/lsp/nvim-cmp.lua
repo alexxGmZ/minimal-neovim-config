@@ -103,6 +103,6 @@ cmp.setup.cmdline(':', {
 		}
 	}),
 	completion = {
-		keyword_length = 2
+		keyword_length = 1
 	}
 })

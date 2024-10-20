@@ -16,6 +16,7 @@ return {
 	-- Git Integration --
 	--
 	require("alex.plugins.gitsigns"),
+	require("alex.plugins.merginal"),
 
 	--
 	-- Auto completion
