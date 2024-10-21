@@ -1,30 +1,30 @@
 return {
-	{
-		"sitiom/nvim-numbertoggle",
-		enabled = true,
-		event = "VeryLazy",
-	},
+   {
+      "sitiom/nvim-numbertoggle",
+      enabled = true,
+      event = "VeryLazy",
+   },
 
-	{
-		"NMAC427/guess-indent.nvim",
-		config = function()
-			require("guess-indent").setup {}
-		end,
-	},
+   {
+      "NMAC427/guess-indent.nvim",
+      config = function()
+         require("guess-indent").setup {}
+      end,
+   },
 
 
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup({})
-		end
-	},
+   {
+      "kylechui/nvim-surround",
+      version = "*",
+      event = "VeryLazy",
+      config = function()
+         require("nvim-surround").setup({})
+      end
+   },
 
-	{
-		"gregsexton/MatchTag",
-		event = "VeryLazy",
-		ft = { 'markdown', 'html', 'php', 'xml', 'javascript' },
-	},
+   {
+      "gregsexton/MatchTag",
+      event = "VeryLazy",
+      ft = { 'markdown', 'html', 'php', 'xml', 'javascript' },
+   },
 }
