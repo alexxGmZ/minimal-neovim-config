@@ -32,7 +32,7 @@ opt.foldmethod = "indent"
 
 -- indention
 opt.autoindent = true
-opt.expandtab = false
+opt.expandtab = true
 opt.tabstop = 3
 opt.softtabstop = 3
 opt.shiftwidth = 3
