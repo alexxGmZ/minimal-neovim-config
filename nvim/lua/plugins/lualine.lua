@@ -169,7 +169,7 @@ return {
 					},
 				},
 				lualine_x = { word_cnt, macro_recording, "searchcount" },
-				lualine_y = { lsp_client, "encoding", "filetype" },
+				lualine_y = { lsp_client, "filetype" },
 				lualine_z = {
 					{
 						"location",
