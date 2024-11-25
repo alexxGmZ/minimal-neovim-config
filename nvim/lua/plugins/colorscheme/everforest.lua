@@ -21,7 +21,7 @@ local function setup_config()
          hl.TSFunctionCall = { link = "Function" }
          hl.TSKeyword = { link = "Keyword" }
          hl.TSParameter = { fg = palette.red, bold = true }
-         hl.TSString = { fg = palette.green, bold = true }
+         hl.TSString = { link = "String" }
          hl.TSConditional = { fg = palette.red, italic = true }
          hl.TSVariable = { fg = palette.none, bold = true }
          hl.TSMethod = { link = "Function" }
@@ -29,8 +29,8 @@ local function setup_config()
          hl.TreesitterContextBottom = { underline = true }
 
          hl.CurrentWord = { fg = palette.none, underline = true }
-         hl.String = { fg = palette.green, bold = true }
-         hl.Keyword = { fg = palette.red, italic = true }
+         hl.String = { fg = palette.green, bold = false }
+         hl.Keyword = { fg = palette.orange, italic = true }
          hl.Constant = { fg = palette.orange, bold = true }
          hl.Function = { fg = palette.orange, bold = true }
          hl.Boolean = { fg = palette.purple, bold = true }
@@ -44,17 +44,27 @@ local function setup_config()
          hl.vimFuncName = { link = "Function" }
          hl.vimFunction = { link = "Function" }
          hl.vimUserFunc = { link = "Function" }
-      end,
-      colours_override = function(palette) end,
+
+         hl.IlluminateWordText = { bg = "#4e4e4e" }
+         hl.IlluminateWordRead = { bg = "#4e4e4e" }
+         hl.IlluminateWordWrite = { bg = "#4e4e4e" }
+
+         hl.CursorLineNr = { fg = palette.green, bold = true }
+         hl["@variable.builtin"] = { fg = palette.yellow, bold = true }
+         hl["@module.builtin"] = { link = "@variable.builtin" }
+         hl["@keyword.return"] = { fg = palette.orange, italic = true }
+         hl["@keyword.repeat"] = { fg = palette.red, italic = true }
+         hl["@keyword.function"] = { fg = palette.red, italic = true }
+         hl["@constant.builtin"] = { fg = palette.purple, italic = true }
+         hl.LazyReasonKeys = { fg = palette.red }
+         hl["@property"] = { fg = palette.blue, italic = true }
+      end
    })
    vim.cmd.colorscheme "everforest"
 end
 
 return {
    "neanias/everforest-nvim",
-   -- event = "CmdlineChanged",
    priority = 1000,
-   config = function()
-      setup_config()
-   end
+   config = setup_config
 }
