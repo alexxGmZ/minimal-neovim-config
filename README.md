@@ -52,7 +52,6 @@ I use [lazy](https://github.com/folke/lazy.nvim) as a Plugin Manager
 * [ibhagwan/fzf-lua](https://github.com/ibhagwan/fzf-lua)
 * [alexghergh/nvim-tmux-navigation](https://github.com/alexghergh/nvim-tmux-navigation)
 * [sitiom/nvim-numbertoggle](https://github.com/sitiom/nvim-numbertoggle)
-* [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 * [jinh0/eyeliner.nvim](https://github.com/jinh0/eyeliner.nvim)
 
 #### LSP and Auto-Completion
