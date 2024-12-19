@@ -58,6 +58,8 @@ local function setup_config()
          hl["@constant.builtin"] = { fg = palette.purple, italic = true }
          hl.LazyReasonKeys = { fg = palette.red }
          hl["@property"] = { fg = palette.blue, italic = true }
+         hl.EyelinerPrimary = { fg = palette.orange, bold = true, reverse = true }
+         hl.EyelinerSecondary = { fg = palette.blue, bold = true, reverse = true }
       end
    })
    vim.cmd.colorscheme "everforest"
