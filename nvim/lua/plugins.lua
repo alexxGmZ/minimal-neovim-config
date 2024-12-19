@@ -12,7 +12,6 @@ return {
       end,
    },
 
-
    {
       "kylechui/nvim-surround",
       version = "*",
@@ -20,11 +19,5 @@ return {
       config = function()
          require("nvim-surround").setup({})
       end
-   },
-
-   {
-      "gregsexton/MatchTag",
-      event = "VeryLazy",
-      ft = { 'markdown', 'html', 'php', 'xml', 'javascript' },
    },
 }
