@@ -19,7 +19,7 @@ return {
 			minimum_width = 10,
 			render = "default",
 			stages = "fade",
-			timeout = 2000,
+			timeout = 1500,
 			top_down = false
 		})
 
