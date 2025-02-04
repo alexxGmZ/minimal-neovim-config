@@ -24,6 +24,7 @@ vim.cmd [[
 -- column
 opt.foldcolumn = "0"
 opt.signcolumn = "yes"
+opt.colorcolumn = "80,90"
 
 -- fold
 opt.foldenable = true
