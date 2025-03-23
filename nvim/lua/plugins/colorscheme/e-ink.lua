@@ -6,10 +6,10 @@ local function highlight_overrides()
    -- print(vim.inspect(everforest))
 
    -- transparent when dark background
-   if vim.o.background == "dark" then
-      set_hl(0, "Normal", { fg = mono[12], bg = "NONE" })
-      set_hl(0, "NotifyBackground", { bg = mono[1] })
-   end
+   -- if vim.o.background == "dark" then
+   --    set_hl(0, "Normal", { fg = mono[12], bg = "NONE" })
+   --    set_hl(0, "NotifyBackground", { bg = mono[1] })
+   -- end
 
    set_hl(0, "Function", { fg = mono[16], bold = true })
    set_hl(0, "@variable", { fg = mono[16], bold = true })
@@ -22,14 +22,7 @@ return {
    priority = 1000,
    config = function()
       vim.cmd.colorscheme "e-ink"
-
-      local time = tonumber(os.date("%H%M"))
-      if time >= 1600 then
-         vim.opt.background = "dark"
-      else
-         vim.opt.background = "light"
-      end
-
+      vim.opt.background = "light"
 
       highlight_overrides()
       vim.api.nvim_create_autocmd("ColorScheme", {
