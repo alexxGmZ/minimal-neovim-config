@@ -20,7 +20,7 @@ return {
             auto_install = true,
             ignore_install = {},
             highlight = {
-               enable = false,
+               enable = true,
                disable = { "lua", "javascript", "go" },
                additional_vim_regex_highlighting = true,
             },
