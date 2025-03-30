@@ -20,22 +20,6 @@ return {
 			s = "SUB"
 		}
 
-		local function lsp_client()
-			local bufnr = vim.api.nvim_get_current_buf()
-
-			local clients = vim.lsp.buf_get_clients(bufnr)
-			if next(clients) == nil then
-				return ''
-			end
-
-			local c = {}
-			for _, client in pairs(clients) do
-				table.insert(c, client.name)
-			end
-			-- return '\u{f085} ' .. table.concat(c, ' | ')
-			return table.concat(c, ' ')
-		end
-
 		local function macro_recording()
 			local reg = vim.fn.reg_recording()
 			if reg == "" then return "" end -- not recording
@@ -134,7 +118,6 @@ return {
 				lualine_b = {
 					{
 						"branch",
-						color = { bg = "#66d9ef", fg = "#1a1b26" },
 						icons_enabled = true,
 						separator = { right = "" },
 					},
@@ -169,7 +152,12 @@ return {
 					},
 				},
 				lualine_x = { word_cnt, macro_recording, "searchcount" },
-				lualine_y = { lsp_client, "filetype" },
+				lualine_y = { "lsp_status",
+					{
+						"filetype",
+						icon_only = true
+					}
+				},
 				lualine_z = {
 					{
 						"location",
@@ -212,7 +200,12 @@ return {
 				},
 				lualine_c = {},
 				lualine_x = { word_cnt },
-				lualine_y = { { "filetype" } },
+				lualine_y = {
+					{
+						"filetype",
+						icon_only = true
+					}
+				},
 				lualine_z = {
 					{
 						"location",
