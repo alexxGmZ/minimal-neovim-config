@@ -17,7 +17,7 @@ end
 
 return {
    -- dir = "/home/alex/Git/e-ink.nvim",
-   "alexxGmZ/e-ink.nvim",
+   "e-ink-colorscheme/e-ink.nvim",
    branch = "beta",
    priority = 1000,
    config = function()
