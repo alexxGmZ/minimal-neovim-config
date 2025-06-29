@@ -5,7 +5,21 @@ return {
       config = function()
          local treesitter = require('nvim-treesitter.configs')
          treesitter.setup {
+            -- parser_install_dir = "/home/alex/.local/share/nvim/lazy/nvim-treesitter",
             ensure_installed = {
+               "html",
+               "css",
+               "javascript",
+               "php",
+               "python",
+               "java",
+               "cpp",
+               "json",
+               "sql"
+            },
+            sync_install = false,
+            auto_install = true,
+            ignore_install = {
                "bash",
                "c",
                "lua",
@@ -16,37 +30,31 @@ return {
                "vim",
                "vimdoc"
             },
-            sync_install = false,
-            auto_install = true,
-            ignore_install = {},
             highlight = {
                enable = true,
-               disable = { "lua", "javascript", "go" },
-               additional_vim_regex_highlighting = true,
+               disable = { "html", "xml", "csv", "tmux" },
+               additional_vim_regex_highlighting = false,
             },
             incremental_selection = { enable = false },
             indent = { enable = false }
          }
-      end
+      end,
    },
    {
       "nvim-treesitter/nvim-treesitter-context",
-      event = "VeryLazy",
-      dependencies = { "nvim-treesitter/nvim-treesitter" },
-      config = function()
-         require "treesitter-context".setup {
-            enable = true,
-            max_lines = 0,
-            min_window_height = 0,
-            line_numbers = true,
-            multiline_threshold = 20,
-            trim_scope = "outer",
-            mode = "cursor",
-            separator = nil,
-            zindex = 20,
-            on_attach = nil,
-         }
-      end
+      cmd = { "TSContext" },
+      opts = {
+         enable = true,
+         max_lines = 0,
+         min_window_height = 0,
+         line_numbers = true,
+         multiline_threshold = 20,
+         trim_scope = "outer",
+         mode = "cursor",
+         separator = nil,
+         zindex = 50,
+         on_attach = nil,
+      },
    },
    {
       "Wansmer/treesj",
