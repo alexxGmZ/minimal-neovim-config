@@ -18,4 +18,11 @@ return {
       event = "VeryLazy",
       config = true
    },
+
+   {
+      "hat0uma/csvview.nvim",
+      cmd = { "CsvViewEnable", "CsvViewToggle" },
+      config = true
+   },
+
 }
