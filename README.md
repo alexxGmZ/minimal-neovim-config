@@ -21,7 +21,7 @@ My minimal neovim setup and development workflow. Mainly used for Termux.
 
 ### Dependencies
 
-* neovim v0.11.+
+* neovim v0.12.+
 * [lazy](https://github.com/folke/lazy.nvim) as the plugin manager
 * fzf
 
