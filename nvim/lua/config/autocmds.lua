@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd({ "CmdlineLeave", "UIEnter" }, {
 	end
 })
 
-create_autocmd("BufWritePost", {
+vim.api.nvim_create_autocmd("BufWritePost", {
    pattern = "*.typ",
    group = user_augroup,
    callback = function(args)
